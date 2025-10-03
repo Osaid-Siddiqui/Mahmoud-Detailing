@@ -61,7 +61,7 @@ export default function MahmoudDetailing() {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border"
+        className="fixed top-0 left-0 right-0 z-50 bg-black/95 text-white backdrop-blur-sm border-b border-black/20"
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -81,15 +81,15 @@ export default function MahmoudDetailing() {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className={`text-sm font-medium transition-colors hover:text-primary relative ${
-                    activeSection === item.toLowerCase() ? "text-primary" : "text-foreground"
+                  className={`text-sm font-medium transition-colors hover:text-red-500 relative ${
+                    activeSection === item.toLowerCase() ? "text-red-500" : "text-white"
                   }`}
                 >
                   {item}
                   {activeSection === item.toLowerCase() && (
                     <motion.div
                       layoutId="activeSection"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-red-500"
                     />
                   )}
                 </button>
@@ -98,13 +98,13 @@ export default function MahmoudDetailing() {
 
             <Button
               onClick={() => scrollToSection("contact")}
-              className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="hidden md:flex bg-red-600 hover:bg-red-600/90 text-white"
             >
               Book Now
             </Button>
 
             {/* Mobile Menu Button */}
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-foreground">
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-white">
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -127,7 +127,7 @@ export default function MahmoudDetailing() {
               ))}
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground w-full"
+                className="bg-red-600 hover:bg-red-600/90 text-white w-full"
               >
                 Book Now
               </Button>
@@ -137,39 +137,15 @@ export default function MahmoudDetailing() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 hero-section-bg">
         <motion.div style={{ opacity }} className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-background" />
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 90, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "linear",
-            }}
-            className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
-          />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/30 to-transparent" />
+          <div className="hero-shape hero-shape-red" />
+          <div className="hero-shape hero-shape-dark" />
         </motion.div>
 
         <div className="container mx-auto px-4 z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="mb-8"
-            >
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-10-03%20at%2014.04.18_f2a9e06e-ETyTj3HyX6EVm8997k6yHYx8STvZgt.jpg"
-                alt="Mahmoud Mobile Detailing"
-                width={600}
-                height={200}
-                className="mx-auto"
-              />
-            </motion.div>
 
             <motion.h1
               initial={{ y: 50, opacity: 0 }}
@@ -198,7 +174,7 @@ export default function MahmoudDetailing() {
               <Button
                 size="lg"
                 onClick={() => scrollToSection("contact")}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6 group"
+                className="bg-red-600 hover:bg-red-600/90 text-white text-lg px-8 py-6 group"
               >
                 Book Now
                 <motion.span
@@ -213,7 +189,7 @@ export default function MahmoudDetailing() {
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection("services")}
-                className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                className="text-lg px-8 py-6 border-red-600 text-red-600 hover:bg-red-600 hover:text-white"
               >
                 View Services
               </Button>
@@ -254,7 +230,7 @@ export default function MahmoudDetailing() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-card">
+      <section id="about" className="py-24 bg-black text-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -300,14 +276,14 @@ export default function MahmoudDetailing() {
             >
               <div className="grid grid-cols-2 gap-4">
                 <Image
-                  src="/luxury-car-exterior-detailing-close-up.jpg"
+                  src="https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=900&auto=format&fit=crop"
                   alt="Car Detailing"
                   width={300}
                   height={300}
                   className="rounded-lg"
                 />
                 <Image
-                  src="/car-interior-leather-seats-cleaning.jpg"
+                  src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=900&auto=format&fit=crop"
                   alt="Interior Detailing"
                   width={300}
                   height={300}
@@ -329,7 +305,7 @@ export default function MahmoudDetailing() {
       </section>
 
       {/* Services/Pricing Section */}
-      <section id="services" className="py-24 bg-background">
+      <section id="services" className="py-24 bg-black text-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -433,9 +409,9 @@ export default function MahmoudDetailing() {
                       POPULAR
                     </div>
                   )}
-                  <div className="text-primary mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
+                  <div className="service-icon-badge mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
                   <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
-                  <div className="text-4xl font-bold text-primary mb-6">{service.price}</div>
+                  <div className="text-4xl font-bold text-red-600 mb-6">{service.price}</div>
                   <ul className="space-y-3 mb-8">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2">
@@ -446,7 +422,7 @@ export default function MahmoudDetailing() {
                   </ul>
                   <Button
                     onClick={() => scrollToSection("contact")}
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground group-hover:shadow-lg group-hover:shadow-primary/50 transition-all"
+                    className="w-full bg-red-600 hover:bg-red-600/90 text-white group-hover:shadow-lg group-hover:shadow-red-500/50 transition-all"
                   >
                     Book Service
                   </Button>
@@ -458,7 +434,7 @@ export default function MahmoudDetailing() {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-24 bg-card">
+      <section id="gallery" className="py-24 bg-black text-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -476,13 +452,31 @@ export default function MahmoudDetailing() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              "luxury sedan exterior shine after detailing",
-              "sports car red paint correction ceramic coating",
-              "SUV interior leather seats deep cleaning",
-              "black car headlight restoration before after",
-              "engine bay detailing clean organized",
-              "white car full body wax polish shine",
-            ].map((query, index) => (
+              {
+                url: "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop",
+                alt: "Exterior shine after premium detailing",
+              },
+              {
+                url: "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?q=80&w=1200&auto=format&fit=crop",
+                alt: "Red sports car ceramic coating",
+              },
+              {
+                url: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1200&auto=format&fit=crop",
+                alt: "Interior leather deep cleaning",
+              },
+              {
+                url: "https://images.unsplash.com/photo-1541447271487-09612b3f49c7?q=80&w=1200&auto=format&fit=crop",
+                alt: "Headlight restoration results",
+              },
+              {
+                url: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop",
+                alt: "Engine bay detailing clean finish",
+              },
+              {
+                url: "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?q=80&w=1200&auto=format&fit=crop",
+                alt: "Full body wax and polish",
+              },
+            ].map((img, index) => (
               <motion.div
                 key={index}
                 initial={{ scale: 0.8, opacity: 0 }}
@@ -493,8 +487,8 @@ export default function MahmoudDetailing() {
                 className="relative overflow-hidden rounded-lg group cursor-pointer"
               >
                 <Image
-                  src={`/.jpg?height=400&width=600&query=${query}`}
-                  alt={`Gallery ${index + 1}`}
+                  src={img.url}
+                  alt={img.alt}
                   width={600}
                   height={400}
                   className="w-full h-64 object-cover"
@@ -512,7 +506,7 @@ export default function MahmoudDetailing() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-background">
+      <section id="contact" className="py-24 bg-background contact-section-bg">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <motion.div initial={{ x: -50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }}>
@@ -531,7 +525,7 @@ export default function MahmoudDetailing() {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Phone</div>
-                    <a href="tel:+13147602677" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a href="tel:+13147602677" className="text-muted-foreground hover:text-red-600 transition-colors">
                       +1 (314)-760-2677
                     </a>
                   </div>
@@ -544,8 +538,10 @@ export default function MahmoudDetailing() {
                   <div>
                     <div className="font-semibold mb-1">Email</div>
                     <a
-                      href="mailto:aloqlamahmoud81@gmail.com"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=aloqlamahmoud81@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-red-600 transition-colors"
                     >
                       aloqlamahmoud81@gmail.com
                     </a>
@@ -557,11 +553,17 @@ export default function MahmoudDetailing() {
                     <MapPin className="text-primary" size={24} />
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">Service Areas</div>
-                    <div className="text-muted-foreground">
-                      Saint Louis, Missouri
-                      <br />
-                      Ladue • Kirkwood • South County • Manchester
+                    <div className="font-semibold mb-1">Location</div>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Saint+Louis,+Missouri"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-red-600 transition-colors"
+                    >
+                      Saint Louis, Missouri (Open in Google Maps)
+                    </a>
+                    <div className="text-muted-foreground mt-2">
+                      Service Areas: Ladue • Kirkwood • South County • Manchester
                     </div>
                   </div>
                 </div>
@@ -645,7 +647,7 @@ export default function MahmoudDetailing() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-card border-t border-border py-12">
+      <footer className="bg-black text-white border-t border-black/20 py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
@@ -668,7 +670,7 @@ export default function MahmoudDetailing() {
                   <li key={item}>
                     <button
                       onClick={() => scrollToSection(item.toLowerCase())}
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-red-600 transition-colors"
                     >
                       {item}
                     </button>
@@ -682,19 +684,31 @@ export default function MahmoudDetailing() {
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <Phone size={16} className="text-primary" />
-                  <a href="tel:+13147602677" className="hover:text-primary transition-colors">
+                  <a href="tel:+13147602677" className="hover:text-red-600 transition-colors">
                     +1 (314)-760-2677
                   </a>
                 </li>
                 <li className="flex items-center gap-2">
                   <Mail size={16} className="text-primary" />
-                  <a href="mailto:aloqlamahmoud81@gmail.com" className="hover:text-primary transition-colors">
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=aloqlamahmoud81@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-red-600 transition-colors"
+                  >
                     aloqlamahmoud81@gmail.com
                   </a>
                 </li>
                 <li className="flex items-start gap-2">
                   <MapPin size={16} className="text-primary flex-shrink-0 mt-1" />
-                  <span>Saint Louis, Missouri</span>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Saint+Louis,+Missouri"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-red-600 transition-colors"
+                  >
+                    Saint Louis, Missouri
+                  </a>
                 </li>
               </ul>
             </div>
@@ -712,7 +726,7 @@ export default function MahmoudDetailing() {
                   key={index}
                   href={social.href}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-red-600 transition-colors"
                 >
                   {social.icon}
                 </motion.a>
