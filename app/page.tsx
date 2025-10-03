@@ -230,7 +230,7 @@ export default function MahmoudDetailing() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-card">
+      <section id="about" className="py-24 bg-black text-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -305,7 +305,7 @@ export default function MahmoudDetailing() {
       </section>
 
       {/* Services/Pricing Section */}
-      <section id="services" className="py-24 bg-background">
+      <section id="services" className="py-24 bg-black text-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -434,7 +434,7 @@ export default function MahmoudDetailing() {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-24 bg-card">
+      <section id="gallery" className="py-24 bg-black text-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -525,7 +525,7 @@ export default function MahmoudDetailing() {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Phone</div>
-                    <a href="tel:+13147602677" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a href="tel:+13147602677" className="text-muted-foreground hover:text-red-600 transition-colors">
                       +1 (314)-760-2677
                     </a>
                   </div>
@@ -647,7 +647,7 @@ export default function MahmoudDetailing() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-card border-t border-border py-12">
+      <footer className="bg-black text-white border-t border-black/20 py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
@@ -670,7 +670,7 @@ export default function MahmoudDetailing() {
                   <li key={item}>
                     <button
                       onClick={() => scrollToSection(item.toLowerCase())}
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-red-600 transition-colors"
                     >
                       {item}
                     </button>
@@ -726,7 +726,7 @@ export default function MahmoudDetailing() {
                   key={index}
                   href={social.href}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-red-600 transition-colors"
                 >
                   {social.icon}
                 </motion.a>
