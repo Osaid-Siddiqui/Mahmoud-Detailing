@@ -167,7 +167,7 @@ export default function MahmoudDetailing() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="text-5xl md:text-7xl font-bold mb-6 text-balance text-white"
             >
-              Premium Shine, <span className="text-primary">Anytime, Anywhere</span>
+              Premium Shine, <span className="text-white">Anytime, Anywhere</span>
             </motion.h1>
 
             <motion.p
@@ -214,15 +214,15 @@ export default function MahmoudDetailing() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 1 }}
-              className="mt-12 flex items-center justify-center gap-6 text-muted-foreground"
+              className="mt-12 flex items-center justify-center gap-6 text-white/80"
             >
               <div className="flex items-center gap-2">
-                <Phone size={20} className="text-primary" />
+                <Phone size={20} className="text-white" />
                 <span>+1 (314)-760-2677</span>
               </div>
               <div className="hidden sm:block w-px h-6 bg-border" />
               <div className="flex items-center gap-2">
-                <MapPin size={20} className="text-primary" />
+                <MapPin size={20} className="text-white" />
                 <span>Saint Louis, MO</span>
               </div>
             </motion.div>
@@ -255,7 +255,7 @@ export default function MahmoudDetailing() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-                We Come to <span className="text-primary">You</span>
+                We Come to <span className="text-white">You</span>
               </h2>
               <p className="text-lg text-white/80 mb-6 leading-relaxed">
                 Mahmoud Mobile Detailing brings professional auto detailing services directly to your location. Whether
@@ -307,10 +307,10 @@ export default function MahmoudDetailing() {
               </div>
               <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-lg">
                 <div className="flex items-center gap-3">
-                  <Sparkles size={32} />
+                  <Sparkles size={32} className="text-white" />
                   <div>
-                    <div className="font-bold text-lg">Mobile Service</div>
-                    <div className="text-sm">We Come to You!</div>
+                    <div className="font-bold text-lg text-white">Mobile Service</div>
+                    <div className="text-sm text-white/80">We Come to You!</div>
                   </div>
                 </div>
               </div>
@@ -415,7 +415,7 @@ export default function MahmoudDetailing() {
                 whileHover={{ y: -10 }}
               >
                 <Card
-                  className={`p-8 h-full relative overflow-hidden group bg-black/60 text-white backdrop-blur border border-white/10 ${
+                  className={`p-8 h-full relative overflow-hidden group bg-white text-foreground border border-black/10 ${
                     service.popular ? "border-primary border-2" : ""
                   } hover:shadow-red-600/20 hover:shadow-xl transition-all`}
                 >
@@ -431,7 +431,7 @@ export default function MahmoudDetailing() {
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2">
                         <Check size={20} className="text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-white/80">{feature}</span>
+                        <span className="text-foreground/70">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -539,8 +539,8 @@ export default function MahmoudDetailing() {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    <Phone className="text-primary" size={24} />
+                  <div className="bg-white/20 p-3 rounded-lg">
+                    <Phone className="text-white" size={24} />
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Phone</div>
@@ -551,8 +551,8 @@ export default function MahmoudDetailing() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    <Mail className="text-primary" size={24} />
+                  <div className="bg-white/20 p-3 rounded-lg">
+                    <Mail className="text-white" size={24} />
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Email</div>
@@ -568,8 +568,8 @@ export default function MahmoudDetailing() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    <MapPin className="text-primary" size={24} />
+                  <div className="bg-white/20 p-3 rounded-lg">
+                    <MapPin className="text-white" size={24} />
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Location</div>
@@ -600,7 +600,7 @@ export default function MahmoudDetailing() {
                       key={index}
                       href={social.href}
                       whileHover={{ scale: 1.1, y: -2 }}
-                      className="bg-primary/10 hover:bg-primary text-primary hover:text-primary-foreground p-3 rounded-lg transition-colors"
+                      className="bg-white/20 hover:bg-white/30 text-black/80 hover:text-black p-3 rounded-lg transition-colors"
                     >
                       {social.icon}
                     </motion.a>
@@ -677,7 +677,7 @@ export default function MahmoudDetailing() {
                 height={60}
                 className="h-12 w-auto mb-4"
               />
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-white/80 leading-relaxed">
                 Premium mobile auto detailing services bringing showroom shine to your doorstep.
               </p>
             </div>
@@ -700,7 +700,7 @@ export default function MahmoudDetailing() {
 
             <div>
               <h3 className="font-bold text-lg mb-4">Contact Info</h3>
-              <ul className="space-y-3 text-muted-foreground">
+              <ul className="space-y-3 text-white/80">
                 <li className="flex items-center gap-2">
                   <Phone size={16} className="text-primary" />
                   <a href="tel:+13147602677" className="hover:text-red-600 transition-colors">
@@ -745,7 +745,7 @@ export default function MahmoudDetailing() {
                   key={index}
                   href={social.href}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="text-muted-foreground hover:text-red-600 transition-colors"
+                  className="bg-white/20 hover:bg-white/30 text-black/80 hover:text-black p-2 rounded-md transition-colors"
                 >
                   {social.icon}
                 </motion.a>
