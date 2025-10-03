@@ -276,14 +276,14 @@ export default function MahmoudDetailing() {
             >
               <div className="grid grid-cols-2 gap-4">
                 <Image
-                  src="/luxury-car-exterior-detailing-close-up.jpg"
+                  src="https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=900&auto=format&fit=crop"
                   alt="Car Detailing"
                   width={300}
                   height={300}
                   className="rounded-lg"
                 />
                 <Image
-                  src="/car-interior-leather-seats-cleaning.jpg"
+                  src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=900&auto=format&fit=crop"
                   alt="Interior Detailing"
                   width={300}
                   height={300}
