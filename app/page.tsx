@@ -174,7 +174,7 @@ export default function MahmoudDetailing() {
               <Button
                 size="lg"
                 onClick={() => scrollToSection("contact")}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6 group"
+                className="bg-red-600 hover:bg-red-600/90 text-white text-lg px-8 py-6 group"
               >
                 Book Now
                 <motion.span
@@ -189,7 +189,7 @@ export default function MahmoudDetailing() {
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection("services")}
-                className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                className="text-lg px-8 py-6 border-red-600 text-red-600 hover:bg-red-600 hover:text-white"
               >
                 View Services
               </Button>
