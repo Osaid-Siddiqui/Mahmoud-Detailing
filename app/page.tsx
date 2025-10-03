@@ -167,7 +167,7 @@ export default function MahmoudDetailing() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="text-5xl md:text-7xl font-bold mb-6 text-balance text-white"
             >
-              Premium Shine, <span className="text-white">Anytime, Anywhere</span>
+              Premium Shine, <span className="text-red-600">Anytime, Anywhere</span>
             </motion.h1>
 
             <motion.p
@@ -255,7 +255,7 @@ export default function MahmoudDetailing() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-                We Come to <span className="text-white">You</span>
+                We Come to <span className="text-red-600">You</span>
               </h2>
               <p className="text-lg text-white/80 mb-6 leading-relaxed">
                 Mahmoud Mobile Detailing brings professional auto detailing services directly to your location. Whether
@@ -268,15 +268,15 @@ export default function MahmoudDetailing() {
               </p>
               <div className="grid grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">5+</div>
+                  <div className="text-3xl font-bold text-red-600 mb-2">5+</div>
                   <div className="text-sm text-white/70">Years Experience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">500+</div>
+                  <div className="text-3xl font-bold text-red-600 mb-2">500+</div>
                   <div className="text-sm text-white/70">Happy Clients</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">100%</div>
+                  <div className="text-3xl font-bold text-red-600 mb-2">100%</div>
                   <div className="text-sm text-white/70">Satisfaction</div>
                 </div>
               </div>
@@ -329,7 +329,7 @@ export default function MahmoudDetailing() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
-              Our <span className="text-primary">Services</span>
+              Our <span className="text-red-600">Services</span>
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto text-balance">
               Premium detailing packages tailored to your vehicle's needs
@@ -458,7 +458,7 @@ export default function MahmoudDetailing() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
-              Our <span className="text-primary">Work</span>
+              Our <span className="text-red-600">Work</span>
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto text-balance">
               See the transformation - before and after results
@@ -512,7 +512,7 @@ export default function MahmoudDetailing() {
                   height={400}
                   className="w-full h-64 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-red-600/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                   <div className="text-foreground">
                     <div className="font-bold text-lg mb-1">Professional Detailing</div>
                     <div className="text-sm text-white/80">Premium Results</div>
@@ -530,7 +530,7 @@ export default function MahmoudDetailing() {
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <motion.div initial={{ x: -50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }}>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-                Get a <span className="text-primary">Free Quote</span>
+                Get a <span className="text-red-600">Free Quote</span>
               </h2>
               <p className="text-lg text-white/90 mb-8 leading-relaxed">
                 Ready to give your vehicle the care it deserves? Contact us today for a free quote and experience
