@@ -153,7 +153,7 @@ export default function MahmoudDetailing() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="text-5xl md:text-7xl font-bold mb-6 text-balance"
             >
-              Premium Shine, <span className="text-primary">Anytime, Anywhere</span>
+              Premium Shine, <span className="text-white">Anytime, Anywhere</span>
             </motion.h1>
 
             <motion.p
