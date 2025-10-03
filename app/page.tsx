@@ -29,6 +29,8 @@ export default function MahmoudDetailing() {
   const { scrollY } = useScroll()
   const opacity = useTransform(scrollY, [0, 300], [1, 0])
 
+  const [selectedService, setSelectedService] = useState("")
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["home", "about", "services", "gallery", "contact"]
@@ -53,6 +55,16 @@ export default function MahmoudDetailing() {
       element.scrollIntoView({ behavior: "smooth" })
       setMobileMenuOpen(false)
     }
+  }
+
+  const handleBookService = (serviceName: string) => {
+    setSelectedService(serviceName)
+    scrollToSection("contact")
+  }
+
+  const handleBookNow = () => {
+    setSelectedService("General Booking")
+    scrollToSection("contact")
   }
 
   return (
@@ -97,7 +109,8 @@ export default function MahmoudDetailing() {
             </div>
 
             <Button
-              onClick={() => scrollToSection("contact")}
+              onClick={handleBookNow}
+              title="Call +1 (314)-760-2677 or email aloqlamahmoud81@gmail.com"
               className="hidden md:flex bg-red-600 hover:bg-red-600/90 text-white"
             >
               Book Now
@@ -126,7 +139,8 @@ export default function MahmoudDetailing() {
                 </button>
               ))}
               <Button
-                onClick={() => scrollToSection("contact")}
+                onClick={handleBookNow}
+                title="Call +1 (314)-760-2677 or email aloqlamahmoud81@gmail.com"
                 className="bg-red-600 hover:bg-red-600/90 text-white w-full"
               >
                 Book Now
@@ -151,7 +165,7 @@ export default function MahmoudDetailing() {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-5xl md:text-7xl font-bold mb-6 text-balance"
+              className="text-5xl md:text-7xl font-bold mb-6 text-balance text-white"
             >
               Premium Shine, <span className="text-primary">Anytime, Anywhere</span>
             </motion.h1>
@@ -160,7 +174,7 @@ export default function MahmoudDetailing() {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-xl md:text-2xl text-muted-foreground mb-8 text-balance"
+              className="text-xl md:text-2xl text-white/90 mb-8 text-balance"
             >
               Professional mobile auto detailing services in Saint Louis, Missouri
             </motion.p>
@@ -173,7 +187,8 @@ export default function MahmoudDetailing() {
             >
               <Button
                 size="lg"
-                onClick={() => scrollToSection("contact")}
+                onClick={handleBookNow}
+                title="Call +1 (314)-760-2677 or email aloqlamahmoud81@gmail.com"
                 className="bg-red-600 hover:bg-red-600/90 text-white text-lg px-8 py-6 group"
               >
                 Book Now
@@ -242,27 +257,27 @@ export default function MahmoudDetailing() {
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
                 We Come to <span className="text-primary">You</span>
               </h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-lg text-white/80 mb-6 leading-relaxed">
                 Mahmoud Mobile Detailing brings professional auto detailing services directly to your location. Whether
                 you're at home, work, or anywhere in the Saint Louis area, we provide premium car care with convenience
                 and excellence.
               </p>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg text-white/80 mb-8 leading-relaxed">
                 With years of experience and a passion for perfection, Mahmoud Aloqla ensures every vehicle receives
                 meticulous attention to detail, leaving your car looking showroom-ready.
               </p>
               <div className="grid grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">5+</div>
-                  <div className="text-sm text-muted-foreground">Years Experience</div>
+                  <div className="text-sm text-white/70">Years Experience</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                  <div className="text-sm text-muted-foreground">Happy Clients</div>
+                  <div className="text-sm text-white/70">Happy Clients</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-sm text-muted-foreground">Satisfaction</div>
+                  <div className="text-sm text-white/70">Satisfaction</div>
                 </div>
               </div>
             </motion.div>
@@ -316,7 +331,7 @@ export default function MahmoudDetailing() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
               Our <span className="text-primary">Services</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
+            <p className="text-xl text-white/90 max-w-2xl mx-auto text-balance">
               Premium detailing packages tailored to your vehicle's needs
             </p>
           </motion.div>
@@ -400,9 +415,9 @@ export default function MahmoudDetailing() {
                 whileHover={{ y: -10 }}
               >
                 <Card
-                  className={`p-8 h-full relative overflow-hidden group ${
+                  className={`p-8 h-full relative overflow-hidden group bg-black/60 text-white backdrop-blur border border-white/10 ${
                     service.popular ? "border-primary border-2" : ""
-                  }`}
+                  } hover:shadow-red-600/20 hover:shadow-xl transition-all`}
                 >
                   {service.popular && (
                     <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
@@ -416,12 +431,12 @@ export default function MahmoudDetailing() {
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2">
                         <Check size={20} className="text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-muted-foreground">{feature}</span>
+                        <span className="text-white/80">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Button
-                    onClick={() => scrollToSection("contact")}
+                    onClick={() => handleBookService(service.title)}
                     className="w-full bg-red-600 hover:bg-red-600/90 text-white group-hover:shadow-lg group-hover:shadow-red-500/50 transition-all"
                   >
                     Book Service
@@ -445,7 +460,7 @@ export default function MahmoudDetailing() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
               Our <span className="text-primary">Work</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
+            <p className="text-xl text-white/90 max-w-2xl mx-auto text-balance">
               See the transformation - before and after results
             </p>
           </motion.div>
@@ -475,6 +490,10 @@ export default function MahmoudDetailing() {
               {
                 url: "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?q=80&w=1200&auto=format&fit=crop",
                 alt: "Full body wax and polish",
+              },
+              {
+                url: "https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=1200&auto=format&fit=crop",
+                alt: "Headlight restoration close-up",
               },
             ].map((img, index) => (
               <motion.div
@@ -506,14 +525,14 @@ export default function MahmoudDetailing() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-background contact-section-bg">
+      <section id="contact" className="py-24 contact-section-bg text-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <motion.div initial={{ x: -50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }}>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
                 Get a <span className="text-primary">Free Quote</span>
               </h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg text-white/90 mb-8 leading-relaxed">
                 Ready to give your vehicle the care it deserves? Contact us today for a free quote and experience
                 premium mobile detailing services.
               </p>
@@ -525,7 +544,7 @@ export default function MahmoudDetailing() {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Phone</div>
-                    <a href="tel:+13147602677" className="text-muted-foreground hover:text-red-600 transition-colors">
+                    <a href="tel:+13147602677" className="text-white/80 hover:text-red-600 transition-colors">
                       +1 (314)-760-2677
                     </a>
                   </div>
@@ -541,7 +560,7 @@ export default function MahmoudDetailing() {
                       href="https://mail.google.com/mail/?view=cm&fs=1&to=aloqlamahmoud81@gmail.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-red-600 transition-colors"
+                      className="text-white/80 hover:text-red-600 transition-colors"
                     >
                       aloqlamahmoud81@gmail.com
                     </a>
@@ -558,11 +577,11 @@ export default function MahmoudDetailing() {
                       href="https://www.google.com/maps/search/?api=1&query=Saint+Louis,+Missouri"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-red-600 transition-colors"
+                      className="text-white/80 hover:text-red-600 transition-colors"
                     >
                       Saint Louis, Missouri (Open in Google Maps)
                     </a>
-                    <div className="text-muted-foreground mt-2">
+                    <div className="text-white/70 mt-2">
                       Service Areas: Ladue • Kirkwood • South County • Manchester
                     </div>
                   </div>
@@ -591,34 +610,34 @@ export default function MahmoudDetailing() {
             </motion.div>
 
             <motion.div initial={{ x: 50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }}>
-              <Card className="p-8">
+              <Card className="p-8 bg-black/70 text-white backdrop-blur border-white/10">
                 <form className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Full Name
                     </label>
-                    <Input id="name" placeholder="John Doe" className="bg-background" />
+                    <Input id="name" placeholder="John Doe" className="bg-black/40 text-white placeholder-white/50 border-white/20" />
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-2">
                       Email Address
                     </label>
-                    <Input id="email" type="email" placeholder="john@example.com" className="bg-background" />
+                    <Input id="email" type="email" placeholder="john@example.com" className="bg-black/40 text-white placeholder-white/50 border-white/20" />
                   </div>
 
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium mb-2">
                       Phone Number
                     </label>
-                    <Input id="phone" type="tel" placeholder="+1 (314) 000-0000" className="bg-background" />
+                    <Input id="phone" type="tel" placeholder="+1 (314) 000-0000" className="bg-black/40 text-white placeholder-white/50 border-white/20" />
                   </div>
 
                   <div>
                     <label htmlFor="service" className="block text-sm font-medium mb-2">
                       Service Interested In
                     </label>
-                    <Input id="service" placeholder="e.g., Full Detailing Package" className="bg-background" />
+                    <Input id="service" placeholder="e.g., Full Detailing Package" value={selectedService} onChange={(e) => setSelectedService((e.target as HTMLInputElement).value)} className="bg-black/40 text-white placeholder-white/50 border-white/20" />
                   </div>
 
                   <div>
@@ -629,7 +648,7 @@ export default function MahmoudDetailing() {
                       id="message"
                       placeholder="Tell us about your vehicle and any specific requirements..."
                       rows={4}
-                      className="bg-background"
+                      className="bg-black/40 text-white placeholder-white/50 border-white/20"
                     />
                   </div>
 
@@ -670,7 +689,7 @@ export default function MahmoudDetailing() {
                   <li key={item}>
                     <button
                       onClick={() => scrollToSection(item.toLowerCase())}
-                      className="text-muted-foreground hover:text-red-600 transition-colors"
+                      className="text-white/80 hover:text-red-600 transition-colors"
                     >
                       {item}
                     </button>
