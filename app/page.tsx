@@ -515,7 +515,7 @@ export default function MahmoudDetailing() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                   <div className="text-foreground">
                     <div className="font-bold text-lg mb-1">Professional Detailing</div>
-                    <div className="text-sm text-muted-foreground">Premium Results</div>
+                    <div className="text-sm text-white/80">Premium Results</div>
                   </div>
                 </div>
               </motion.div>
@@ -734,7 +734,7 @@ export default function MahmoudDetailing() {
           </div>
 
           <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-sm">© 2025 Mahmoud Mobile Detailing. All Rights Reserved.</p>
+            <p className="text-white/70 text-sm">© 2025 Mahmoud Mobile Detailing. All Rights Reserved.</p>
             <div className="flex gap-4">
               {[
                 { icon: <Facebook size={18} />, href: "#" },
